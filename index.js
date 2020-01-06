@@ -9,7 +9,6 @@ function getAgentsCsv() {
     fs.createReadStream('agents.csv')
     .pipe(csv())
     .on('data', (row) => {
-      // console.log(row);
       return agents.push(row)
     })
     .on('end', () => {
@@ -24,13 +23,11 @@ function getLeadsCsv() {
     fs.createReadStream('leads.csv')
     .pipe(csv())
     .on('data', (row) => {
-      // console.log(row);
       return leads.push(row)
     })
     .on('end', () => {
       resolve(leads)
-      // console.log(leads)
-      // console.log('CSV file successfully processed');
+
     }));
 }
 
