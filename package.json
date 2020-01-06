@@ -1,0 +1,18 @@
+{
+  "name": "myprogram",
+  "version": "1.0.0",
+  "description": "Assign leads to agents",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodeJS"
+  ],
+  "author": "Olubunmi Alao",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parser": "^2.3.2",
+    "csv-writer": "^1.5.0"
+  }
+}
