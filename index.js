@@ -33,15 +33,22 @@ function getLeadsCsv() {
 
 // function to assign leads to agent
 const myProgram = (agents, leads) => {
+
   let output;
-  output = agents.map((agent) => {
-    if (agent.status !== 'busy') {
-      const agentLeads = leads.splice(0, agent.weight);
-      agent["leads"] = JSON.stringify(agentLeads)
-    }
-    return agent
-  });
-  
+  while(leads.length) {
+    output = agents.map((agent) => {
+      const currentAgentLeads = agent["leads"] || [];
+      if(agent.status !== 'busy'){
+        const agentLeads = leads.splice(0, agent.weight);
+        agent["leads"] = currentAgentLeads.concat(agentLeads);
+      }
+      return agent
+    });
+  }
+  output = output.map((agent) => ({
+    ...agent,
+    leads: JSON.stringify(agent.leads),
+  }));
 
   const csvWriter = createCsvWriter({
     path: 'output.csv',
