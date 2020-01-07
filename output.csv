@@ -1,5 +1,5 @@
 ID,Name,Status,Weight,Leads
-1,John,available,1,[object Object]
+1,John,available,1,"[{""id"":""45"",""email "":""dimitry@gmail.ru"",""name"":""Dmitry""}]"
 2,Paul,busy,1,
-3,Marie,available,2,"[object Object],[object Object]"
-4,Ted,available,1,[object Object]
+3,Marie,available,2,"[{""id"":""46"",""email "":""ahmed@yahoo.ae"",""name"":""Ahmed""},{""id"":""47"",""email "":""leila@gmail.com"",""name"":""Leila""}]"
+4,Ted,available,1,"[{""id"":""48"",""email "":""henry@gmail.com"",""name"":""Henry""}]"

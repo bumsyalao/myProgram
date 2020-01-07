@@ -36,10 +36,12 @@ const myProgram = (agents, leads) => {
   let output;
   output = agents.map((agent) => {
     if (agent.status !== 'busy') {
-      agent.leads = leads.splice(0, agent.weight);
+      const agentLeads = leads.splice(0, agent.weight);
+      agent["leads"] = JSON.stringify(agentLeads)
     }
     return agent
   });
+  
 
   const csvWriter = createCsvWriter({
     path: 'output.csv',
@@ -66,8 +68,8 @@ const myProgram = (agents, leads) => {
     ]
   });
 
-  const data = output;
-
+  
+let data = output;
   csvWriter
     .writeRecords(data)
     .then(() => console.log('The CSV file was written successfully'));
